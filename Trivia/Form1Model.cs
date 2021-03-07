@@ -20,8 +20,7 @@ namespace Trivia
 
         public Form1Model()
         {
-            Questions = TriviaApi.GetTriviaQuestions();
-            Questions = Questions.Where(x => x.Category.ToLower().Contains("anime")).ToList();
+            Questions = TriviaApi.GetTriviaQuestionsNoAnime();
             CurQuestion = Questions[qIndex];
             SetTextFields();
         }
@@ -32,7 +31,7 @@ namespace Trivia
             QuestionNumber++;
             if (qIndex >= Questions.Count)
             {
-                Questions = TriviaApi.GetTriviaQuestions();
+                Questions = TriviaApi.GetTriviaQuestionsNoAnime();
                 qIndex = 0;
             }
             CurQuestion = Questions[qIndex];

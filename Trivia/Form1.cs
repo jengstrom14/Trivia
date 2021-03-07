@@ -48,6 +48,7 @@ namespace Trivia
                 radioButton4.Text = WebUtility.HtmlDecode(MODEL.Responses[3]);
             }
             this.Refresh();
+            this.button2.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
